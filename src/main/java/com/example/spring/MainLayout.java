@@ -6,7 +6,9 @@ import java.util.List;
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.HasComponents;
 import com.vaadin.flow.component.applayout.AppLayout;
+import com.vaadin.flow.component.dependency.CssImport;
 import com.vaadin.flow.component.html.Anchor;
+import com.vaadin.flow.component.html.Span;
 import com.vaadin.flow.component.icon.VaadinIcon;
 import com.vaadin.flow.component.tabs.Tab;
 import com.vaadin.flow.component.tabs.TabVariant;
@@ -14,20 +16,30 @@ import com.vaadin.flow.component.tabs.Tabs;
 import com.vaadin.flow.router.RouterLink;
 import com.vaadin.flow.server.VaadinServlet;
 import com.vaadin.flow.theme.Theme;
+import com.vaadin.flow.theme.lumo.Lumo;
 import com.vaadin.flow.theme.material.Material;
 
 @Theme(value = Material.class, variant = Material.LIGHT)
-//@Theme(value = Lumo.class)
+//@Theme(value = Lumo.class, variant = Lumo.LIGHT)
+//@CssImport(value = "./styles/menu.css", themeFor = "vaadin-app-layout")
 public class MainLayout extends AppLayout {
 
 	public MainLayout() {
 		Tabs menu = createMenuTabs();
 
+		Span test = new Span("Test Branding");
+		test.addClassName("hide-on-mobile");
+		test.setWidthFull();
+		test.getElement().getStyle().set("max-width", "100%");
+		
+		this.addToNavbar(test);
 		this.addToNavbar(true, menu);
 	}
 	
 	private Tabs createMenuTabs() {
 		final Tabs tabs = new Tabs();
+		tabs.setWidthFull();
+		tabs.getElement().getStyle().set("max-width", "100%");
 		tabs.setOrientation(Tabs.Orientation.HORIZONTAL);
 		tabs.add(getAvailableTabs());
 		return tabs;

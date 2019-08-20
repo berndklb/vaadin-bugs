@@ -1,0 +1,25 @@
+@media only screen and (max-width: 700px) {
+	.hide-on-mobile {
+		display: none;
+	}
+	
+	vaadin-app-layout {
+		--_vaadin-app-layout-navbar-offset-size: 0px;
+	}
+	
+	[part="navbar"] {
+		padding: 0px;
+		box-shadow: none;
+	}
+    [part="navbar"] ::slotted(vaadin-tabs) {
+    	max-width: 100% !important;
+    }
+
+	[part="navbar"] ::slotted(.hide-on-mobile) {
+    	display: none;
+    }
+
+    [part="navbar"]::after {
+    	content: none;
+	}
+}
