@@ -14,10 +14,10 @@ import com.vaadin.flow.component.tabs.Tabs;
 import com.vaadin.flow.router.RouterLink;
 import com.vaadin.flow.server.VaadinServlet;
 import com.vaadin.flow.theme.Theme;
-import com.vaadin.flow.theme.lumo.Lumo;
+import com.vaadin.flow.theme.material.Material;
 
-//@Theme(value = Material.class, variant = Material.LIGHT)
-@Theme(value = Lumo.class)
+@Theme(value = Material.class, variant = Material.LIGHT)
+//@Theme(value = Lumo.class)
 public class MainLayout extends AppLayout {
 
 	public MainLayout() {
