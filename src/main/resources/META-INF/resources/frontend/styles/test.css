@@ -1,0 +1,33 @@
+vaadin-app-layout vaadin-tab {
+	font-size: var(--lumo-font-size-xs);
+	padding-left: .75em;
+	padding-right: .75em;
+}
+
+vaadin-app-layout vaadin-tab a:hover {
+	text-decoration: none;
+}
+
+vaadin-app-layout vaadin-tab:not ([selected] ) a {
+	color: var(--lumo-contrast-60pct);
+}
+
+vaadin-app-layout vaadin-tab iron-icon {
+	margin: 0 4px;
+	width: 1.5em;
+	height: 1.5em;
+	padding: .25rem;
+	box-sizing: border-box !important;
+}
+
+vaadin-app-layout vaadin-tabs {
+	max-width: 65%;
+}
+
+@media ( min-width : 700px) {
+	vaadin-app-layout vaadin-tab {
+		font-size: var(--lumo-font-size-m);
+		padding-left: 1em;
+		padding-right: 1em;
+	}
+}

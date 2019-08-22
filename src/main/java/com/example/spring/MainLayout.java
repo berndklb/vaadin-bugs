@@ -21,7 +21,8 @@ import com.vaadin.flow.theme.material.Material;
 
 @Theme(value = Material.class, variant = Material.LIGHT)
 //@Theme(value = Lumo.class, variant = Lumo.LIGHT)
-//@CssImport(value = "./styles/menu.css", themeFor = "vaadin-app-layout")
+@CssImport(value = "./styles/menu.css", themeFor = "vaadin-app-layout")
+@CssImport(value = "./styles/test.css")
 public class MainLayout extends AppLayout {
 
 	public MainLayout() {
@@ -29,9 +30,6 @@ public class MainLayout extends AppLayout {
 
 		Span test = new Span("Test Branding");
 		test.addClassName("hide-on-mobile");
-		test.setWidthFull();
-		test.getElement().getStyle().set("max-width", "100%");
-		
 		this.addToNavbar(test);
 		this.addToNavbar(true, menu);
 	}
@@ -39,7 +37,6 @@ public class MainLayout extends AppLayout {
 	private Tabs createMenuTabs() {
 		final Tabs tabs = new Tabs();
 		tabs.setWidthFull();
-		tabs.getElement().getStyle().set("max-width", "100%");
 		tabs.setOrientation(Tabs.Orientation.HORIZONTAL);
 		tabs.add(getAvailableTabs());
 		return tabs;
@@ -48,12 +45,9 @@ public class MainLayout extends AppLayout {
 	private Tab[] getAvailableTabs() {
 		final List<Tab> tabs = new ArrayList<>(4);
 		tabs.add(createTab(VaadinIcon.HOME_O, "menu.home", MainView.class));
-		tabs.add(createTab(VaadinIcon.ABACUS, "menu.home", AppTabView.class));
-		tabs.add(createTab(VaadinIcon.ABSOLUTE_POSITION, "menu.home", MainView.class));
-		tabs.add(createTab(VaadinIcon.HOME_O, "menu.home", MainView.class));
-		tabs.add(createTab(VaadinIcon.HOME_O, "menu.home", MainView.class));
-		tabs.add(createTab(VaadinIcon.HOME_O, "menu.home", MainView.class));
-		tabs.add(createTab(VaadinIcon.YOUTUBE_SQUARE, "menu.home", MainView.class));
+//		tabs.add(createTab(VaadinIcon.ABACUS, "menu.home", AppTabView.class));
+//		tabs.add(createTab(VaadinIcon.ABSOLUTE_POSITION, "menu.home", MainView.class));
+//		tabs.add(createTab(VaadinIcon.YOUTUBE_SQUARE, "menu.home", MainView.class));
 
 		final String contextPath = VaadinServlet.getCurrent().getServletContext().getContextPath();
 		final Tab logoutTab = createTab(createLogoutLink(contextPath));
